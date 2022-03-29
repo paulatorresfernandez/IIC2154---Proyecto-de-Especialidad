@@ -16,7 +16,7 @@ def top_users(data):
         df_user = pd.DataFrame(d['user'].tolist()).fillna(0)['id'].value_counts().head(10)
         list_top.append(df_user)
     pd_top = pd.concat(list_top, axis=0)
-    top = pd_top.groupb('id').value_counts().head(10)
+    top = pd_top.groupby('id').value_counts().head(10)
     return top
 
 def top_days_tweets(data):
